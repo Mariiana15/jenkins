@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    environment{
+        intagram="@mariianalemis"   
+        
+    }
+    
+    stages{
+        stage("saludo 1"){
+            steps{
+                echo "hola mundo"
+            }
+        }
+        stage("saludo 2"){
+            steps{
+                echo "hola desde saludo 2 paso 1"
+                echo "hola desde saludo 2 paso 2"
+            }
+        }
+        stage("imprimir variables entorno"){
+            steps{
+                echo "${env.intagram}"
+                echo "$intagram"
+                sh "echo 'hola mundo'"
+            }
+        }
+        stage("variable de entorno"){
+            steps{
+                echo "${env.instagram}"
+            }
+        }
+        
+    }
+}
